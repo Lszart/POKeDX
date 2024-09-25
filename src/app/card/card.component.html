@@ -1,0 +1,28 @@
+<div>
+  <button class="card" (click)="showCard()">
+    @if (pokemonData.id) {
+      <img
+        src="{{pokemonData.sprites.front_default}}"
+        class="card-img-top"
+        alt="pokemon"
+      />
+    }@else {
+      <img
+        src="/img/gray-pokeball.png"
+        class="card-img-top"
+        alt="pokemon"
+      />
+    }
+
+
+    <div class="card-body">
+      <h4 class="card-name">{{ pokemon.name }}</h4>
+      <hr />
+      <ul class="card-types">
+        @for (type of pokemonData.types; track $index) {
+        <li>{{ type.type.name }}</li>
+        }
+      </ul>
+    </div>
+  </button>
+</div>

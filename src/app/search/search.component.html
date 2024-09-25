@@ -1,0 +1,13 @@
+<div style="display: grid; grid-auto-flow: column; height: 100%; width: 100%">
+  <mat-form-field style="align-self: center">
+    <input
+      matInput
+      (keyup.enter)="search()"
+      type="search"
+      [(ngModel)]="value"
+    />
+    <button matSuffix mat-icon-button aria-label="Search" (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

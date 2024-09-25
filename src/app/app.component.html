@@ -1,0 +1,26 @@
+<section  class="layout">
+  <div class="header">
+    <div><h1>{{title}}</h1></div>
+    <div class="search-bar"><app-search></app-search></div>
+  </div>
+  <div class="leftSide">  </div>
+  <div class="body">
+    <div class = "container responsive-grid">
+      @for (pokemon of pokemons; track pokemon.name) {
+        <app-card [pokemon]="pokemon"></app-card>
+      }
+    </div>      
+  </div>
+  <div class="footer">  
+    <button mat-fab (click)="prevPage()">
+      <mat-icon >chevron_left</mat-icon>
+    </button>
+    page  {{page}} / {{count}}
+    <button mat-fab (click)="nextPage()">
+      <mat-icon >chevron_right</mat-icon>
+    </button>
+  </div>
+  <div class="rightSide"> </div>
+</section >
+
+<router-outlet />
