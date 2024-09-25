@@ -25,7 +25,7 @@ import { error } from 'node:console';
 })
 export class SearchComponent {
   search() {
-    this.pokeService.getPokemon(this.value).subscribe((results: Pokemon) => {
+    this.pokeService.getPokemon(this.value.toLowerCase()).subscribe((results: Pokemon) => {
         this.pokemonData = results as Pokemon;
         this.dialog.open(PokemonDialogComponent, {data: this.pokemonData,})},
       error => {
